@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html, body {
+  background: #0A0A0A;
+  color: #F5F5F5;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* —— Underground tokens —— */
+
+/* Mono caption — used everywhere for labels / status / metadata */
+.label {
+  font-family: 'SF Mono', 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #A3A3A3;
+  font-weight: 700;
+}
+
+/* Display — Helvetica Neue Bold w/ tight tracking */
+.display {
+  font-family: 'Helvetica Neue', Helvetica, 'Arial Black', sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+/* Mono price — big numerical takes */
+.mono-price {
+  font-family: 'SF Mono', 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* —— Buttons —— */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 14px;
+  padding: 16px 20px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 80ms ease, background 120ms ease, border-color 120ms ease, opacity 120ms;
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn:active { transform: translateY(1px); }
+.btn-primary { background: #C8FF00; color: #0A0A0A; }
+.btn-primary:hover:not(:disabled) { background: #d8ff33; }
+.btn-secondary {
+  background: transparent;
+  color: #F5F5F5;
+  border-color: #F5F5F5;
+  font-family: 'SF Mono', 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  font-size: 12px;
+}
+.btn-secondary:hover { background: #1F1F1F; }
+.btn-ghost {
+  background: transparent;
+  color: #A3A3A3;
+  border-color: #2A2A2A;
+  font-family: 'SF Mono', 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  font-size: 12px;
+}
+.btn-ghost:hover { color: #F5F5F5; border-color: #F5F5F5; }
+.btn-danger { background: #FF3B30; color: #F5F5F5; }
+
+/* Apple Pay button — copy of design */
+.btn-apple-pay {
+  background: #000;
+  color: #fff;
+  border: 1px solid #F5F5F5;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0;
+  text-transform: none;
+  border-radius: 8px;
+  padding: 14px 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* —— Inputs —— */
+input, textarea, select {
+  background: #141414;
+  border: 1px solid #2A2A2A;
+  color: #F5F5F5;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-family: inherit;
+  width: 100%;
+  font-size: 14px;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #C8FF00;
+}
+
+/* —— Pills / badges —— */
+.pill-acid {
+  display: inline-block;
+  font-family: 'SF Mono', 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #C8FF00;
+  border: 1px solid #C8FF00;
+  padding: 3px 6px;
+  font-weight: 700;
+}
+
+.pill-line {
+  display: inline-block;
+  font-family: 'SF Mono', 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border: 1px solid #2A2A2A;
+  padding: 4px 8px;
+  font-weight: 700;
+}
+
+.pill-hot {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+  font-family: 'SF Mono', 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #fff;
+  background: #FF3B30;
+  padding: 3px 6px;
+  font-weight: 700;
+}
+
+/* —— Dotted divider for under-construction sections —— */
+.scanline {
+  background: repeating-linear-gradient(
+    180deg,
+    transparent 0px,
+    transparent 2px,
+    rgba(200, 255, 0, 0.04) 2px,
+    rgba(200, 255, 0, 0.04) 3px
+  );
+}
+
+/* Striped placeholder — when image fails or is missing */
+.striped-placeholder {
+  background: repeating-linear-gradient(135deg, #1a1a1a, #1a1a1a 8px, #0f0f0f 8px, #0f0f0f 16px);
+}
